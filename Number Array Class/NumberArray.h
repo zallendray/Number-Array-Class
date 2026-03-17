@@ -5,7 +5,7 @@ class NumberArray
 {
 private:
 	int size;
-	double* data;
+	double* data = nullptr;
 
 public:
 	NumberArray(int size = MAX_SIZE);
