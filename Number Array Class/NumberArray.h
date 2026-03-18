@@ -4,11 +4,12 @@
 class NumberArray
 {
 private:
-	int size;
 	double* data = nullptr;
 
 public:
-	NumberArray(int size = MAX_SIZE);
+	static const int size = 9;
+
+	NumberArray(int array_size = size);
 
 	~NumberArray();
 

@@ -2,7 +2,7 @@
 #include <iostream>
 
 
-NumberArray::NumberArray(int size)
+NumberArray::NumberArray(int array_size)
 {
 	NumberArray::data = new double[size];
 
