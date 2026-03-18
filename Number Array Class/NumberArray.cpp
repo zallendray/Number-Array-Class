@@ -40,20 +40,50 @@ double NumberArray::getNumber(int index) const
 
 double NumberArray::getMin() const
 {
+	double min = NumberArray::data[0];
 
+	for (int i = 0; i < NumberArray::size; i++)
+	{
+		if (NumberArray::data[i] < min) {
+			min = NumberArray::data[i];
+		}
+	}
+	return min;
 }
 
 double NumberArray::getMax() const
 {
+	double max = NumberArray::data[0];
 
+	for (int i = 0; i < NumberArray::size; i++)
+	{
+		if (NumberArray::data[i] > max) {
+			max = NumberArray::data[i];
+		}
+	}
+	return max;
 }
 
 double NumberArray::getAverage() const
 {
+	double average = 0;
+
+	for (int i = 0; i < NumberArray::size; i++)
+	{
+		average += NumberArray::data[i];
+	}
+	average /= NumberArray::size;
+
+	return average;
 
 }
 
 void NumberArray::print() const
 {
+	std::cout << std::endl;
 
+	for (int i = 0; i < NumberArray::size; i++)
+	{
+		std::cout << std::endl << NumberArray::data[i];
+	}
 }
