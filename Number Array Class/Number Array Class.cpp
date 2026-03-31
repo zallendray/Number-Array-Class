@@ -33,5 +33,36 @@ int main()
     std::cout << std::endl << std::endl << "Min Value: " << std::endl << NA.getMin() << std::endl;
     std::cout << std::endl << std::endl << "Number 5: " << std::endl << NA.getNumber(4) << std::endl;
     std::cout << std::endl << std::endl << "Number 41: " << std::endl << NA.getNumber(40) << std::endl;
+
+
+    std::cout << "Copy Contructor and Overloaded Assignment Operator Tests:" << std::endl << std::endl;
+
+    NumberArray a;
+
+    for (int i = 0; i < NumberArray::size; i++) {
+        a.setNumber(i, i);
+    }
+
+    NumberArray b(a);
+    std::cout << std::endl << "ARRAY A:" << std::endl;
+    a.print();
+    std::cout << std::endl << "ARRAY B:" << std::endl;
+    b.print();
+
+    a.setNumber(3, 8);
+    std::cout << std::endl << "MODIFIED ARRAY A:" << std::endl;
+    a.print();
+    std::cout << std::endl << "ARRAY B:" << std::endl;
+    b.print();
+
+    for (int i = 0; i < NumberArray::size; i++) {
+        b.setNumber(i, i+20);
+    }
+
+    std::cout << std::endl << "NEW ARRAY B:" << std::endl;
+    b.print();
+    a = b;
+    std::cout << std::endl << "ASSIGNED ARRAY A:" << std::endl;
+    a.print();
 }
 
