@@ -90,7 +90,10 @@ void NumberArray::print() const
 
 NumberArray::NumberArray(const NumberArray& other)
 {
-
+	data = new double[size];
+	for (int i = 0; i < size; i++) {
+		data[i] = other.data[i];
+	}
 }
 
 NumberArray& NumberArray::operator=(const NumberArray& other)
