@@ -87,3 +87,13 @@ void NumberArray::print() const
 		std::cout << std::endl << NumberArray::data[i];
 	}
 }
+
+NumberArray::NumberArray(const NumberArray& other)
+{
+
+}
+
+NumberArray& NumberArray::operator=(const NumberArray& other)
+{
+
+}

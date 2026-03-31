@@ -6,6 +6,8 @@ class NumberArray
 private:
 	double* data = nullptr;
 
+	NumberArray& operator=(const NumberArray& other);
+
 public:
 	static const int size = 9;
 
@@ -25,6 +27,7 @@ public:
 
 	void print() const;
 
+	NumberArray(const NumberArray& other);
 };
 
 #endif
