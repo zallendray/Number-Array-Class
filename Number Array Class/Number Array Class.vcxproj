@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Number Array Class.cpp" />
-    <ClCompile Include="NumberArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="NumberArray.h" />
