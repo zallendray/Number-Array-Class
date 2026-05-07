@@ -1,10 +1,10 @@
 #include "NumberArray.h"
 #include <iostream>
 
-
-NumberArray::NumberArray(int array_size)
+template <typename T>
+NumberArray<T>::NumberArray(int array_size)
 {
-	NumberArray::data = new double[size];
+	NumberArray::data = new T[size];
 
 	for (int i = 0; i < size; i++) 
 	{
@@ -12,13 +12,15 @@ NumberArray::NumberArray(int array_size)
 	}
 }
 
-NumberArray::~NumberArray()
+template <typename T>
+NumberArray<T>::~NumberArray()
 {
 	delete[] NumberArray::data;
 	std::cout << std::endl << "Memory successfully deallocated.";
 }
 
-void NumberArray::setNumber(int index, double value)
+template <typename T>
+void NumberArray<T>::setNumber(int index, T value)
 {
 	if (index > -1 and index < NumberArray::size) {
 		NumberArray::data[index] = value;
@@ -28,7 +30,8 @@ void NumberArray::setNumber(int index, double value)
 	}
 }
 
-double NumberArray::getNumber(int index) const
+template <typename T>
+T NumberArray<T>::getNumber(int index) const
 {
 	if (index > -1 and index < NumberArray::size) {
 		return NumberArray::data[index];
@@ -38,9 +41,10 @@ double NumberArray::getNumber(int index) const
 	}
 }
 
-double NumberArray::getMin() const
+template <typename T>
+T NumberArray<T>::getMin() const
 {
-	double min = NumberArray::data[0];
+	T min = NumberArray::data[0];
 
 	for (int i = 0; i < NumberArray::size; i++)
 	{
@@ -51,9 +55,10 @@ double NumberArray::getMin() const
 	return min;
 }
 
-double NumberArray::getMax() const
+template <typename T>
+T NumberArray<T>::getMax() const
 {
-	double max = NumberArray::data[0];
+	T max = NumberArray::data[0];
 
 	for (int i = 0; i < NumberArray::size; i++)
 	{
@@ -64,9 +69,10 @@ double NumberArray::getMax() const
 	return max;
 }
 
-double NumberArray::getAverage() const
+template <typename T>
+T NumberArray<T>::getAverage() const
 {
-	double average = 0;
+	T average = 0;
 
 	for (int i = 0; i < NumberArray::size; i++)
 	{
@@ -78,7 +84,8 @@ double NumberArray::getAverage() const
 
 }
 
-void NumberArray::print() const
+template <typename T>
+void NumberArray<T>::print() const
 {
 	std::cout << std::endl;
 
@@ -88,21 +95,23 @@ void NumberArray::print() const
 	}
 }
 
-NumberArray::NumberArray(const NumberArray& other)
+template <typename T>
+NumberArray<T>::NumberArray(const NumberArray& other)
 {
-	data = new double[size];
+	data = new T[size];
 	for (int i = 0; i < size; i++)
 	{
 		data[i] = other.data[i];
 	}
 }
 
-NumberArray& NumberArray::operator=(const NumberArray& other)
+template <typename T>
+NumberArray<T>& NumberArray<T>::operator=(const NumberArray& other)
 {
 	if (this != &other)
 	{
 		delete[] data;
-		data = new double[size];
+		data = new T[size];
 		for (int i = 0; i < size; i++)
 		{
 			data[i] = other.data[i];

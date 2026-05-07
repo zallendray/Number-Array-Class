@@ -1,10 +1,11 @@
 #ifndef NUMBERARRAY_H
 #define NUMBERARRAY_H
 
+template<typename T>
 class NumberArray
 {
 private:
-	double* data = nullptr;
+	T* data = nullptr;
 
 public:
 	static const int size = 9;
@@ -13,15 +14,15 @@ public:
 
 	~NumberArray();
 
-	void setNumber(int index, double value);
+	void setNumber(int index, T value);
 
-	double getNumber(int index) const;
+	T getNumber(int index) const;
 
-	double getMin() const;
+	T getMin() const;
 
-	double getMax() const;
+	T getMax() const;
 
-	double getAverage() const;
+	T getAverage() const;
 
 	void print() const;
 

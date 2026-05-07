@@ -59,9 +59,10 @@ int main()
         b.setNumber(i, i+20);
     }
 
+    
+    a = a;
     std::cout << std::endl << "NEW ARRAY B:" << std::endl;
     b.print();
-    a = b;
     std::cout << std::endl << "ASSIGNED ARRAY A:" << std::endl;
     a.print();
 }
